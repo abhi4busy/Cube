@@ -1,0 +1,40 @@
+<div class="navbar">
+<div class="navbar-inner">
+<div class="left"><a href="#" class="back"><i class="fa fa-back"></i></a><a href="#" class="link menu icon-refresh"><i class="fa fa-refresh"></i></a></div>
+<div class="center sliding"><a href="#" class="logo"><img src="img/logo.png" alt=""></a></div>
+<div class="right"><a href="#" class="link cart item-link" data-context-name="list" ><i class="fa fa-cart"></i> <i class="cap">2</i></a><a href="#" data-popup=".popup-country" class="link globe open-popup"><i class="fa fa-world"></i></a></div>
+</div>
+</div>    
+<!-- Pages, because we need fixed-through navbar and toolbar, it has additional appropriate classes-->    
+<div class="pages">
+<div data-page="details" class="page details" id="details">  
+<div class="page-content hide-bars-on-scroll">       
+<div class="grid-block">       
+ 
+     <div class="content-block" data-bind="with: prodDetailsModel.prodinfo"> 
+     <div class="row">        
+        <div class="media"><img data-bind="attr: {'src': image}" alt=""></div> 
+         <div class="detailholder">
+         	<div class="row">
+         	<div class="col-70 title" data-bind="text: name">Paul Hewitt watches</div>
+            <div class="col-20 price" data-bind="text: '$'+price">$399</div>
+           </div>
+           
+            <a href="#" class="item-link list-button btn btnbox largebtn" data-context-name="payment" data-ignore-cache="true" data-bind="text: 'Pay $'+price, event:{click: $parent.buyNow}">Add To Cart</a>           
+            
+            <h2>Info</h2>
+            <p data-bind="text: desc">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.</p>
+            
+            <div class="socialshare">
+            	<a href="#" class="socials" data-bind="event: {click: $parent.socialShare}">
+                	<i class="fa fa-social"></i>
+                </a>
+            </div>
+         </div>
+       </div>   
+ 
+</div>
+</div>      
+</div>
+</div>
+</div>

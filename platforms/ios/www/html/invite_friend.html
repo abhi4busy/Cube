@@ -1,0 +1,105 @@
+<div class="navbar">
+  <div class="navbar-inner">
+    <div class="left"><a href="#" class="inviteback"><i class="fa fa-back"></i></a><a href="#" class="link menu icon-refresh"><i class="fa fa-refresh"></i></a></div>
+    <div class="center sliding"><a href="#" class="logo"><img src="img/logo.png" alt=""></a></div>
+   <div class="right"><a href="#" class="link cart item-link" data-context-name="list" ><i class="fa fa-cart"></i> <i class="cap">2</i></a>
+         <a href="#" data-popup=".popup-country" class="link globe open-popup"><i class="fa fa-world"></i></a></div>
+  </div>
+</div>
+<div class="pages navbar-through invitefrd">
+    <div data-page="invitefrd" class="page" id="invitefrd">
+        <div class="page-content hide-bars-on-scroll invitefrd">
+             <div class="list-block">
+                <div class="content-block-title">Invite Your Friend</div>                 
+					
+                  <div class="list-block_1 accordion-list paddblock">
+                    <ul>
+                      <li class="accordion-item inviteToggle">
+                            <a href="" class="item-link item-content">
+                                <div class="item-inner">
+                                    <div class="item-title">Quick Invite</div>
+                                </div>
+                            </a> 
+                            <div class="accordion-item-content">
+                              <ul class="invitefrm">
+                                <li>
+                                   <div class="item-content">
+                                      <div class="item-inner">
+                                         <div class="item-input">
+                                            <input type="text" placeholder="Name" class="name">
+                                         </div>
+                                      </div>
+                                   </div>
+                                </li>
+                                <li>
+                                    <div class="item-content">
+                                        <div class="item-inner">
+                                            <div class="item-input">
+                                                <input type="number" placeholder="Mobile Number" class="mno">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li>
+                                   <div class="item-content">
+                                      <div class="item-inner">
+                                         <div class="item-input">
+                                            <input type="email" placeholder="Email" class="email">
+                                         </div>
+                                      </div>
+                                   </div>
+                                </li>
+                                <li class="btnholder">
+                                   <div class="row">
+                                      <div><a id="regSubmit" href="#" class="item-link list-button btn btnbox" data-bind="event: {click: manualInvite}">Invite</a></div>                                      
+                                   </div>
+                                </li>
+                              </ul>
+                            </div>
+                        </li>
+                        <li class="accordion-item contactsToggle">
+                            <a href="" class="item-link item-content" data-bind="event:{click: indexModel.readContacts}">
+                                <div class="item-inner">
+                                    <div class="item-title">Read Contacts</div>
+                                </div>
+                            </a> 
+                            <div class="accordion-item-content">
+                              <div class="contentwrap">
+                                  <form data-search-list=".list-block-search" data-search-in=".item-inner" class="searchbar searchbar-init">
+                                   <div class="searchbar-input">
+                                      <input type="search" placeholder="Search">
+                                   </div>
+                                   <a href="#" class="searchbar-cancel">Cancel</a>
+                                </form>
+
+                                  
+                                  <div class="searchbar-overlay"></div>
+
+                                  <div class="content-block searchbar-not-found">
+                                        Nothing found
+                                </div>
+                                <div class="list-block list-block-search searchbar-found">
+                                  <ul class="invitefrd" data-bind="foreach: indexModel.contacts">
+                                      <li>
+                                          <div class="swipeout-content">
+                                              <div class="item-inner">
+                                              <div class="col-80 numbersection">
+                                              <span class="name" data-bind="text: fullname"></span>
+                                              <span class="mnumber" data-bind="text: mobile"></span>
+                                              </div>
+                                              <div class="col-20"><a href="#" class="btn btngreen" data-bind="event:{click: $parent.inviteFriend}">Invite</a></div>
+                                              </div>
+                                          </div>
+                                      </li>             
+                                  </ul>
+                                  </div>
+                              </div>
+                            </div>
+                        </li>                        
+                    </ul>
+                  </div>
+                
+             </div>
+        </div>
+    </div>
+</div>

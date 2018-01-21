@@ -1,0 +1,51 @@
+<div class="navbar">
+   <div class="navbar-inner">
+      <div class="left"><a href="#" class="confirmback"><i class="fa fa-back"></i></a><a href="#" class="link menu icon-refresh"><i class="fa fa-refresh"></i></a></div>
+      <div class="center sliding"><a href="#" class="logo"><img src="img/logo.png" alt=""></a></div>
+      <div class="right"><a href="#" class="link cart item-link" data-context-name="list" ><i class="fa fa-cart"></i> <i class="cap">2</i></a>
+         <a href="#" data-popup=".popup-country" class="link globe open-popup"><i class="fa fa-world"></i></a>
+      </div>
+   </div>
+</div>
+<div class="pages navbar-through detailsbox">
+   <div data-page="confirmation" class="page confirmationbox" id="confirmation">
+      <div class="page-content hide-bars-on-scroll">
+         <div class="content-block-title purchased">Redemption Details</div>
+         <div class="contentwrap purchased confirmscreen">
+            <div class="row">
+            	 <h3 data-bind="text: indexModel.getProds()">Paul Hewitt watches</h3>
+               <ul>
+                  <li class="item-content">
+                     <div class="itemtitle">Brand</div>
+                     <div class="itemafter" data-bind="text: indexModel.getbrands()">Hewitt</div>
+                  </li>                  
+                  <li class="item-content">
+                     <div class="itemtitle">Address</div>
+                     <div class="itemafter" data-bind="text: indexModel.getLocation()">Dubai Mall Shop Number 5, Dubai UAE</div>
+                  </li>
+                  <li class="item-content">
+                     <div class="itemtitle">Total</div>
+                     <div class="itemafter" data-bind="text: '$'+indexModel.getTotalCost()">$ 399</div>
+                  </li>
+                  <li class="item-content">
+                     <div class="itemtitle">Reference No.</div>
+                     <div class="itemafter" data-bind="text: indexModel.payConfirm().refno"></div>
+                  </li>
+                  <li class="item-content">
+                     <div class="itemtitle">PIN</div>
+                     <div class="itemafter" data-bind="text: indexModel.payConfirm().pin">#*****</div>
+                  </li>
+               </ul>
+               
+              <!--p class="ref">678901234586879805593</p>
+              <p class="pin">PIN: #****</p-->
+              <div data-bind="visible: confirmationModel.isVisible">
+                <h4>Redemption Instructions</h4>
+                  <div class="notes"> <p>Order will be delvered to above mentioned store. You are requested to collect it once notified.</p></div>    
+                  <a href="#" class="item-link btn btnred btnlarge" data-bind="event:{click: indexModel.sendGift}">Cube To Friend</a>
+              </div>  
+            </div>           
+          </div>
+      </div>
+   </div>
+</div>

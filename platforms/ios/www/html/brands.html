@@ -1,0 +1,89 @@
+<!-- Top Navbar-->
+<div class="navbar">
+   <div class="navbar-inner">
+      <div class="left"> <a href="#" class="link menu icon-only open-panel"><i class="fa fa-menu"></i></a><a href="#" class="link menu icon-refresh"><i class="fa fa-refresh"></i></a> </div>
+      <div class="center sliding"><a href="html/brands.html" class="logo"><img src="img/logo.png" alt=""></a></div>
+      <div class="right"><a href="#" class="link cart item-link item-content" data-context-name="list" ><i class="fa fa-cart"></i> <i class="cap">2</i></a>
+         <a href="#" data-popup=".popup-country" class="link globe open-popup"><i class="fa fa-world"></i></a>
+      </div>
+   </div>
+</div>
+<div class="pages">
+  <div class="page home" data-page="brands" id="brands">
+    <div class="page-content hide-bars-on-scroll">
+    	<div class="content-block-title homelogo">
+			<div class="customtabs"> 
+				<a class="item-link item-content active" data-bind="event:{click: indexModel.reloadBrands}">Brands</a>
+				<a class="item-link item-content" data-bind="event:{click: indexModel.itemClickHandler}">Items</a>
+			</div>
+		</div>
+       <!-- <div class="accordion-item">
+          <a href="#" class="accordion-item-toggle">Select Store Location</a>
+          <div class="accordion-item-content" id="locationstore">
+             <form class="countrybar">
+                <div class="from_item country">
+                   <select class="frm" data-bind="options: indexModel.locations().countries,
+                                                 optionsText: 'name',
+                                                 optionsValue: 'id',
+                                                 value: indexModel.user_details().country,
+                                                 optionsCaption: 'Select Country',
+                                                 event:{ change: indexModel.onCountryChange}">
+                      <option>Select Country</option>                      
+                   </select>
+                </div>
+                <div class="from_item state">
+                   <select class="frm" data-bind="options: indexModel.locations().states,
+                                                 optionsText: 'name',
+                                                 optionsValue: 'id',
+                                                 value: indexModel.user_details().state,
+                                                 optionsCaption: 'Select State',
+                                                 event:{ change: indexModel.onStateChange}">
+                      <option>Select State</option>                      
+                   </select>
+                </div>
+                <div class="from_item city">
+                   <select class="frm" data-bind="options: indexModel.locations().cities,
+                                                 optionsText: 'name',
+                                                 optionsValue: 'id',
+                                                 value: indexModel.user_details().city,
+                                                 optionsCaption: 'Select City',
+                                                 event:{ change: brandsModel.onCityChange}">
+                      <option>Select City</option>                      
+                   </select>
+                </div>
+                 <div class="from_item store">
+                   <select class="frm" data-bind="options: indexModel.locations().stores,
+                                                 optionsText: 'name',
+                                                 optionsValue: 'id',
+                                                 value: indexModel.user_details().store,
+                                                 optionsCaption: 'Select Store',
+                                                 event:{ change: brandsModel.onStoreChange}">
+                      <option>Select Store</option>                      
+                   </select>
+                </div> 
+             </form>
+          </div>
+       </div> -->
+       <div class="notification" data-bind="visible: (brandsModel.birthdays.length>0)"> <i class="fa birthday"></i> <a href="#" class="item-link item-content">Today is <strong data-bind="text: bdayFriends">Emad</strong> Birthday Wish Him</a> <!--<a href="#" class="fa fa-close"></a>--></div>
+       <div class="searchbar-overlay"></div>
+       <div class="list-block">
+          <div class="content-block" data-bind="visible: indexModel.brands">
+             <div class="row" data-bind="foreach: indexModel.brands">
+              <!-- ko if: (indexModel.brands.length%2 != 0) -->
+                <div class="col-50 items">
+                   <a href="#" class="media item-link item-content" data-context-name="list" data-bind="attr:{'data-id': brand_id}, event:{click: $parent.brandDetails}"><img data-bind="attr: {'src': image_path}" alt=""></a>
+                   <div class="info"> <a href="#" class="title item-link item-content" data-context-name="list" data-bind="text: brand_name, event:{click: $parent.brandDetails}">Versace</a> </div>
+                </div>
+                <!-- /ko -->
+                <!-- ko if: (indexModel.brands.length%2 == 0) -->
+                <div class="col-50 items">
+                   <a href="#" class="media item-link item-content" data-context-name="list" data-bind="attr:{'data-id': brand_id}, event:{click: $parent.brandDetails}"><img data-bind="attr: {'src': image_path}" alt=""></a>
+                   <div class="info"> <a href="#" class="title item-link item-content" data-context-name="list" data-bind="text: brand_name, event:{click: $parent.brandDetails}">Swarovski</a> </div>
+                </div>
+                <!-- /ko -->
+             </div>
+          </div>
+       </div>
+    </div>
+  </div>
+</div>

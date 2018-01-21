@@ -1,0 +1,97 @@
+<div class="navbar">
+   <div class="navbar-inner">
+      <div class="left"><a href="#" class="cubeback"><i class="fa fa-back"></i></a><a href="#" class="link menu icon-refresh"><i class="fa fa-refresh"></i></a></div>
+      <div class="center sliding"><a href="#" class="logo"><img src="img/logo.png" alt=""></a></div>
+      <div class="right"><a href="#" class="link cart item-link" data-context-name="list" ><i class="fa fa-cart"></i> <i class="cap">2</i></a>
+         <a href="#" data-popup=".popup-country" class="link globe open-popup"><i class="fa fa-world"></i></a>
+      </div>
+   </div>
+</div>
+<div class="pages navbar-through giftbox">
+   <div data-page="giftbox" class="page giftbox" id="giftbox">
+      <div class="page-content hide-bars-on-scroll">
+         <div class="content-block-title purchased" data-bind="visible: myCubeModel.purchased().length>0">Items in Hand</div>
+         <div class="contentwrap purchased" data-bind="visible: myCubeModel.purchased().length>0">
+            <div class="row" data-bind="foreach: myCubeModel.purchased">
+               <!-- ko if: ($index() < 4) -->
+               <!-- ko if: (myCubeModel.purchased().length%2 != 0) -->
+               <div class="col-50 items">
+                  <a href="#" class="media"><img src="img/gift_item.png" alt=""></a>
+                  <div class="info">
+                     <a href="#" class="title" data-bind="text: product_name">Paul Hewitt watches</a>
+                     <span class="addtocartwrap"> <a href="#" class="btn addtocart" data-bind="event: {click: $parent.sendGift}">Cube a Friend</a></span>
+                  </div>
+               </div>
+               <!-- /ko -->
+               <!-- ko if: (myCubeModel.purchased().length%2 == 0) -->
+               <div class="col-50 items">
+                  <a href="#" class="media"><img src="img/gift_item.png" alt=""></a>
+                  <div class="info">
+                     <a href="#" class="title" data-bind="text: product_name">Paul Hewitt watches</a>
+                     <span class="addtocartwrap"> <a href="#" class="btn addtocart" data-bind="event: {click: $parent.sendGift}">Cube a Friend</a></span>
+                  </div>
+               </div>
+               <!-- /ko -->
+               <!-- /ko -->
+            </div>
+            <a href="#" class="btn item-link btnmore" data-cls="purchased" data-context-name="itemsinhand" data-bind="visible: (myCubeModel.purchased().length > 4), event:{click: showMore}">More</a>  
+         </div>
+
+
+         <div class="content-block-title giftsent" data-bind="visible: myCubeModel.giftsend().length > 0">YOU CUBED: (SENT)</div>
+         <div class="contentwrap giftsent" data-bind="visible: myCubeModel.giftsend().length > 0">
+            <div class="row" data-bind="foreach: myCubeModel.giftsend">
+               <!-- ko if: ($index() < 4) -->
+               <!-- ko if: (myCubeModel.giftsend().length%2 != 0) -->
+               <div class="col-50 items">
+                  <a href="#" class="media"><img data-bind="attr: {'src': image_path}" alt=""></a>
+                  <div class="info">
+                     <a href="#" class="title" data-bind="text: product_name">Paul Hewitt watches</a>
+                     <span class="addtocartwrap"> <a href="#" class="btn addtocart" data-bind="event:{ click: $parent.showDetails}">Details</a></span>
+                  </div>
+               </div>
+               <!-- /ko -->
+               <!-- ko if: (myCubeModel.giftsend().length%2 == 0) -->
+               <div class="col-50 items">
+                  <a href="#" class="media"><img data-bind="attr: {'src': image_path}" alt=""></a>
+                  <div class="info">
+                     <a href="#" class="title" data-bind="text: product_name">Paul Hewitt watches</a>
+                     <span class="addtocartwrap"> <a href="#" class="btn addtocart" data-bind="event:{ click: $parent.showDetails}">Details</a></span>
+                  </div>
+               </div>
+               <!-- /ko -->
+               <!-- /ko -->
+            </div>
+            <a href="#" class="btn item-link btnmore" data-cls="sent" data-context-name="itemsinhand" data-bind="visible: (myCubeModel.giftsend().length > 4), event:{click: showMore}">More</a>              
+         </div>
+
+
+         <div class="content-block-title giftreceived" data-bind="visible: myCubeModel.giftreceived().length > 0">CUBED BY: (RECIEVED)</div>
+         <div class="contentwrap giftreceived" data-bind="visible: myCubeModel.giftreceived().length > 0">
+            <div class="row" data-bind="foreach: myCubeModel.giftreceived">
+               <!-- ko if: ($index() < 4) -->
+               <!-- ko if: (myCubeModel.giftreceived().length%2 != 0) -->
+               <div class="col-50 items">
+                  <a href="#" class="media"><img data-bind="attr: {'src': image_path}" alt=""></a>
+                  <div class="info">
+                     <a href="#" class="title" data-bind="text: product_name">Paul Hewitt watches</a>
+                     <span class="addtocartwrap"> <a href="#" class="btn addtocart" data-bind="event:{ click: $parent.showDetails}">Details</a></span>
+                  </div>
+               </div>
+               <!-- /ko -->
+               <!-- ko if: (myCubeModel.giftreceived().length%2 == 0) -->
+               <div class="col-50 items">
+                  <a href="#" class="media"><img data-bind="attr: {'src': image_path}" alt=""></a>
+                  <div class="info">
+                     <a href="#" class="title" data-bind="text: product_name">Paul Hewitt watches</a>
+                     <span class="addtocartwrap"> <a href="#" class="btn addtocart" data-bind="event:{ click: $parent.showDetails}">Details</a></span>
+                  </div>
+               </div>
+               <!-- /ko -->
+               <!-- /ko -->
+            </div>
+            <a href="#" class="btn item-link btnmore" data-cls="received" data-context-name="itemsinhand" data-bind="visible: (myCubeModel.giftreceived().length > 4), event:{click: showMore}">More</a>  
+         </div>
+      </div>
+   </div>
+</div>

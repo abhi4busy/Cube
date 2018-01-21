@@ -1,0 +1,40 @@
+<div class="navbar">
+   <div class="navbar-inner">
+      <div class="left"><a href="#" class="back"><i class="fa fa-back"></i></a><a href="#" class="link menu icon-refresh"><i class="fa fa-refresh"></i></a></div>
+      <div class="center sliding"><a href="#" class="logo"><img src="img/logo.png" alt=""></a></div>
+      <div class="right"><a href="#" class="link cart item-link " data-context-name="list" ><i class="fa fa-cart"></i> <i class="cap">2</i></a>
+         <a href="#" data-popup=".popup-country" class="link globe open-popup"><i class="fa fa-world"></i></a>
+      </div>
+   </div>
+</div>
+<!-- Pages, because we need fixed-through navbar and toolbar, it has additional appropriate classes-->
+<div class="pages">
+   <div data-page="cart" class="page listdata cartpage" id="cart">
+      <div class="page-content hide-bars-on-scroll">
+         <div class="list-block">
+            <div class="content-block-title" data-bind="text: cartModel.cartTotal">Cart</div>
+            <div class="content-block">
+            	<div class="cartitems" data-bind="foreach: cartModel.cartItems">
+	               <div class="row">
+	                  <div class="col-50 items">
+	                     <a href="#" class="media item-link" data-context-name="details"><img data-bind="attr: {'src': image}" alt=""></a>
+	                     <div class="info">
+	                        <a href="html/details.html" class="title item-link " data-context-name="details" data-bind="text: name">Paul Hewitt watches</a>
+	                        <span class="col-40 price" data-bind="text: '$'+price">$399</span> 
+	                        <span class="col-60 addtocartwrap"><a href="#" class="btn addtocart" data-context-name="payment" data-ignore-cache="true" data-bind="event:{ click: $parent.removeItem}">Remove</a>
+	                        </span> 
+	                     </div>
+	                  </div>                                 
+	               </div>
+               </div>               
+               <div class="btnholder">
+	               <div class="row">
+	                  <div class="col-40"><a href="#" class="item-link list-button btn btnbox" data-bind="event: {click: indexModel.showHomePage}">Shop More</a></div>
+	                  <div class="col-40"><a href="#" class="item-link list-button btnred btn btnbox paynow" data-bind="event:{ click: cartModel.payNow}">Pay Now</a></div>
+	               </div>
+	            </div>
+            </div>            
+         </div>
+      </div>
+   </div>
+</div>

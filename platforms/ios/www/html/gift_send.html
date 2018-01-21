@@ -1,0 +1,37 @@
+<div class="navbar">
+   <div class="navbar-inner">
+      <div class="left"><a href="#" class="giftback"><i class="fa fa-back"></i></a><a href="#" class="link menu icon-refresh"><i class="fa fa-refresh"></i></a></div>
+      <div class="center sliding"><a href="#" class="logo"><img src="img/logo.png" alt=""></a></div>
+      <div class="right"><a href="#" class="link cart item-link item-content" data-context-name="list" ><i class="fa fa-cart"></i> <i class="cap">2</i></a>
+         <a href="#" data-popup=".popup-country" class="link globe open-popup"><i class="fa fa-world"></i></a>
+      </div>
+   </div>
+</div>
+<div class="pages navbar-through giftsend">
+   <div data-page="giftsend" class="page giftsend" id="giftsend">
+      <div class="page-content">
+         <div class="row">
+            <div class="col-100 dragablewrap">
+               <ul class="giftlisting" data-bind="foreach: sendGiftModel.giftProduct">
+                  <li>
+                     <a href="#"  class="ui-widget-content boxdrabable">
+                     <img src="img/gift_item.png" alt="" >
+                     <span data-bind="text: product, attr:{'data-id': id}">Paul Hewitt watches</span>
+                     </a>
+                  </li>                  
+               </ul>
+            </div>
+            <div class="col-100 droppablewrap">
+               <div id="droppable" class="dashedbox drophere">
+                  <div class="binforhide">
+                     <h2>Drop Here</h2>
+                     <h3>OR</h3>
+                     <a href="#" class="item-link btn btnornage btnlarge" data-bind="text: sendGiftModel.btnlbl, event:{ click: getFriendsList}">select your friend</a><br>
+                     <a href="#" class="item-link btn btnornage btnlarge" data-bind="event:{ click: indexModel.sendInvite}">Invite friend</a>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+   </div>
+</div>

@@ -1,0 +1,403 @@
+<!-- Top Navbar-->
+<div class="navbar">
+   <div class="navbar-inner">
+      <div class="left"> <a href="#" class="link menu icon-only open-panel"><i class="fa fa-menu"></i></a><a href="#" class="link menu icon-refresh"><i class="fa fa-refresh"></i></a> </div>
+      <div class="center sliding"><a href="html/brands.html" class="logo"><img src="img/logo.png" alt=""></a></div>
+      <div class="right"><a href="#" class="link cart item-link item-content" data-context-name="list" ><i class="fa fa-cart"></i> <i class="cap">2</i></a>
+         <a href="#" data-popup=".popup-country" class="link globe open-popup"><i class="fa fa-world"></i></a>
+      </div>
+   </div>
+</div>
+<div class="pages">
+  <div data-page="register" class="page no-navbar register" id="register">
+    <div class="list-block page-content hide-bars-on-scroll">
+                     <div class="content-block-title">Register</div>
+                     <ul class="fromwrap">
+                        <li>
+                           <div class="item-content">
+                              <div class="item-inner">
+                                 <div class="item-input">
+                                    <select class="mrlabel">
+                                       <option>MR</option>
+                                       <option>Mrs</option>
+                                       <option>Dr</option>
+                                       <option>Prof</option>
+                                       <option>Rev</option>
+                                       <option>Others</option>
+                                    </select>
+                                 </div>
+                              </div>
+                           </div>
+                        </li>
+                        <li>
+                           <div class="item-content">
+                              <div class="item-inner">
+                                 <div class="item-input">
+                                    <input type="text" placeholder="First Name" class="fname">
+                                 </div>
+                              </div>
+                           </div>
+                        </li>
+                        <li>
+                           <div class="item-content">
+                              <div class="item-inner">
+                                 <div class="item-input">
+                                    <input type="text" placeholder="Middle Name" class="mname">
+                                 </div>
+                              </div>
+                           </div>
+                        </li>
+                        <li>
+                           <div class="item-content">
+                              <div class="item-inner">
+                                 <div class="item-input">
+                                    <input type="text" placeholder="Last Name" class="lname">
+                                 </div>
+                              </div>
+                           </div>
+                        </li>
+                        <li>
+                           <div class="item-content">
+                              <div class="item-inner">
+                                 <div class="item-input row">
+                                    <input type="text" placeholder="Date Of Birth" readonly id="calendar-dob">
+                                 </div>
+                              </div>
+                           </div>
+                        </li>
+                        <li>
+                           <div class="item-content">
+                              <div class="item-inner">
+                                 <div class="item-input row">
+                                    <input type="number" placeholder="Code" class="col-20 co_code"> 
+                                    <input type="number" placeholder="Mobile" class="col-70 phone">
+                                 </div>
+                              </div>
+                           </div>
+                        </li>
+                        <li>
+                           <div class="item-content">
+                              <div class="item-inner">
+                                 <div class="item-input">
+                                    <input type="email" placeholder="E-mail" class="email">
+                                 </div>
+                              </div>
+                           </div>
+                        </li>
+                        <li>
+                           <div class="item-content">
+                              <div class="item-inner">
+                                 <div class="item-input">
+                                    <input type="password" placeholder="Choose Password" class="password">
+                                 </div>
+                              </div>
+                           </div>
+                        </li>
+                        <li>
+                           <div class="item-content">
+                              <div class="item-inner">
+                                 <div class="item-input">
+                                    <input type="password" placeholder="Re-enter Password" class="repassword">
+                                 </div>
+                              </div>
+                           </div>
+                        </li>
+                        <li>
+                           <div class="item-content">
+                              <div class="item-inner">
+                                 <div class="item-input country">
+                                    <select class="frm" data-bind="options: registerModel.locations().countries,
+                                                                   optionsText: 'name',
+                                                                   optionsValue: 'id',
+                                                                   value: selectedCountry,
+                                                                   optionsCaption: 'Select Country',
+                                                                   event:{ change: onCountryChange}">
+                                       <option>Select Country</option>
+                                    </select>
+                                 </div>
+                              </div>
+                           </div>
+                        </li>
+                        <li>
+                           <div class="item-content">
+                              <div class="item-inner">
+                                 <div class="item-input state">
+                                    <select class="frm" data-bind="options: registerModel.locations().states,
+                                                                   optionsText: 'name',
+                                                                   optionsValue: 'id',
+                                                                   value: selectedState,
+                                                                   optionsCaption: 'Select State',
+                                                                   event:{ change: onStateChange}">
+                                       <option>Select State</option>
+                                    </select>
+                                 </div>
+                              </div>
+                           </div>
+                        </li>
+                        <li>
+                           <div class="item-content">
+                              <div class="item-inner">
+                                 <div class="item-input city">
+                                    <select class="frm" data-bind="options: registerModel.locations().cities,
+                                                                   optionsText: 'name',
+                                                                   optionsValue: 'id',
+                                                                   value: selectedCity,
+                                                                   optionsCaption: 'Select City'">
+                                       <option>Select City</option>
+                                    </select>
+                                 </div>
+                              </div>
+                           </div>
+                        </li>
+                        <li>
+                           <div class="item-content">
+                              <div class="item-inner">
+                                 <div class="item-input">
+                                    <input type="text" placeholder="Zip Code" class="frm zip">
+                                 </div>
+                              </div>
+                           </div>
+                        </li>
+                        <li>
+                           <div class="item-content">
+                              <div class="item-inner">
+                                 <div class="item-input">
+                                    <textarea class="address">Address</textarea>
+                                 </div>
+                              </div>
+                           </div>
+                        </li>
+                        <li class="btnholder">
+							<div class="item-inner">
+								<div class="btnwraphalf">
+									<a id="regSubmit" href="#" class="item-link list-button btn btnbox" data-bind="event: {click: submitRegistration}">Submit</a>
+									<a id="login" href="#" class="open-login-screen item-link list-button btnred btn btnbox" data-bind="event: {click: indexModel.showLogin}">Login Here</a>
+								</div>
+							 
+						   </div>
+                        </li>
+                     </ul>
+    </div>
+  </div>
+   <!--div class="page register" data-page="register">
+      <div class="list-block page-content hide-bars-on-scroll">
+         <div class="content-block-title">Register</div>
+         <ul class="fromwrap">
+            <li>
+               <div class="item-content">
+                  <div class="item-inner">
+                     <div class="item-input">
+                        <select class="mrlabel">
+                           <option>MR</option>
+                           <option>Mrs</option>
+                           <option>Dr</option>
+                           <option>Prof</option>
+                           <option>Rev</option>
+                           <option>Others</option>
+                        </select>
+                     </div>
+                  </div>
+               </div>
+            </li>
+            <li>
+               <div class="item-content">
+                  <div class="item-inner">
+                     <div class="item-input">
+                        <input type="text" placeholder="First Name" class="fname">
+                     </div>
+                  </div>
+               </div>
+            </li>
+            <li>
+               <div class="item-content">
+                  <div class="item-inner">
+                     <div class="item-input">
+                        <input type="text" placeholder="Middle Name" class="mname">
+                     </div>
+                  </div>
+               </div>
+            </li>
+            <li>
+               <div class="item-content">
+                  <div class="item-inner">
+                     <div class="item-input">
+                        <input type="text" placeholder="Last Name" class="lname">
+                     </div>
+                  </div>
+               </div>
+            </li>
+            <li>
+               <div class="item-content">
+                  <div class="item-inner">
+                     <div class="item-input row">
+                        <input type="text" placeholder="Code" class="col-20 co_code"> 
+                        <input type="text" placeholder="Phone" class="col-70 phone">
+                     </div>
+                  </div>
+               </div>
+            </li>
+            <li>
+               <div class="item-content">
+                  <div class="item-inner">
+                     <div class="item-input">
+                        <input type="email" placeholder="E-mail" class="email">
+                     </div>
+                  </div>
+               </div>
+            </li>
+            <li>
+               <div class="item-content">
+                  <div class="item-inner">
+                     <div class="item-input">
+                        <input type="text" placeholder="Choose password" class="password">
+                     </div>
+                  </div>
+               </div>
+            </li>
+            <li>
+               <div class="item-content">
+                  <div class="item-inner">
+                     <div class="item-input">
+                        <select class="frm">
+                           <option>Select Country</option>
+                           <option>UAE</option>
+                           <option>Saudi Arabia</option>
+                           <option>Iraq</option>
+                           <option>Bahrain</option>
+                           <option>Kuwait</option>
+                           <option>Egypt</option>
+                           <option>Jordan</option>
+                        </select>
+                     </div>
+                  </div>
+               </div>
+            </li>
+            <li>
+               <div class="item-content">
+                  <div class="item-inner">
+                     <div class="item-input">
+                        <input type="text" placeholder="City" class="city"> 
+                     </div>
+                  </div>
+               </div>
+            </li>
+            <li>
+               <div class="item-content">
+                  <div class="item-inner">
+                     <div class="item-input">
+                        <input type="text" placeholder="Town / City" class="address"> 
+                     </div>
+                  </div>
+               </div>
+            </li>
+            <li>
+               <div class="item-content">
+                  <div class="item-inner">
+                     <div class="item-input">
+                        <textarea class="address">Address</textarea>
+                     </div>
+                  </div>
+               </div>
+            </li>
+            <li class="btnholder">
+               <div class="row">
+                  <div class="col-50"><a href="#" class="item-link list-button btn btnbox">Submit</a></div>
+                  <div class="col-50"><a href="#" class="open-login-screen item-link list-button btnred btn btnbox">Login Here</a></div>
+               </div>
+            </li>
+         </ul>
+      </div>
+   </div-->
+  <!--div class="page home" data-page="home">
+    <div class="page-content hide-bars-on-scroll">
+       <div class="accordion-item">
+          <a href="#" class="accordion-item-toggle">Select Store Location</a>
+          <div class="accordion-item-content" id="locationstore">
+             <form class="countrybar">
+                <div class="from_item country">
+                   <select class="frm">
+                      <option>Select Country</option>
+                      <option>UAE</option>
+                      <option>Saudi Arabia</option>
+                      <option>Iraq</option>
+                      <option>Bahrain</option>
+                      <option>Kuwait</option>
+                      <option>Egypt</option>
+                      <option>Jordan</option>
+                   </select>
+                </div>
+                <div class="from_item city">
+                   <select class="frm">
+                      <option>Select City</option>
+                      <option>Dubai</option>
+                      <option>Abu Dhabi</option>
+                      <option>Sharjah</option>
+                      <option>Ajman</option>
+                      <option>Fujairah</option>
+                      <option>Ras al-Khaimah</option>
+                      <option>Umm al-Quwain</option>
+                   </select>
+                </div>
+                <div class="from_item store">
+                   <select class="frm">
+                      <option>Select Store</option>
+                      <option>Dubai Mall</option>
+                      <option>EBN Batuta Mall</option>
+                      <option>Mall of the Emirates</option>
+                      <option>Festival City Mall</option>
+                      <option>City Centre Deira</option>
+                      <option>Wafi Mall</option>
+                      <option>Dragon Mart</option>
+                   </select>
+                </div>
+             </form>
+          </div>
+       </div>
+       <div class="searchbar-overlay"></div>
+       <div class="list-block">
+          <div class="content-block">
+             <div class="row">
+                <div class="col-50 items">
+                   <a href="html/list.html" class="media item-link item-content" data-context-name="list"><img src="img/branch_1.jpg" alt=""></a>
+                   <div class="info"> <a href="html/list.html" class="title item-link item-content" data-context-name="list">Versace</a> </div>
+                </div>
+                <div class="col-50 items">
+                   <a href="html/list.html" class="media item-link item-content" data-context-name="list"><img src="img/branch_2.jpg" alt=""></a>
+                   <div class="info"> <a href="html/list.html" class="title item-link item-content" data-context-name="list">Swarovski</a> </div>
+                </div>
+             </div>
+             <div class="row">
+                <div class="col-50 items">
+                   <a href="html/list.html" class="media item-link item-content" data-context-name="list"><img src="img/branch_3.jpg" alt=""></a>
+                   <div class="info"> <a href="html/list.html" class="title item-link item-content" data-context-name="list">Samara</a> </div>
+                </div>
+                <div class="col-50 items">
+                   <a href="html/list.html" class="media item-link item-content" data-context-name="list"><img src="img/branch_4.jpg" alt=""></a>
+                   <div class="info"> <a href="html/list.html" class="title item-link item-content" data-context-name="list">Cartier</a> </div>
+                </div>
+             </div>
+             <div class="row">
+                <div class="col-50 items">
+                   <a href="html/list.html" class="media item-link item-content" data-context-name="list"><img src="img/branch_5.jpg" alt=""></a>
+                   <div class="info"> <a href="html/list.html" class="title item-link item-content" data-context-name="list">Omega</a> </div>
+                </div>
+                <div class="col-50 items">
+                   <a href="html/list.html" class="media item-link item-content" data-context-name="list"><img src="img/branch_6.jpg" alt=""></a>
+                   <div class="info"> <a href="html/list.html" class="title item-link item-content" data-context-name="list">Coco Chanel</a> </div>
+                </div>
+             </div>
+             <div class="row">
+                <div class="col-50 items">
+                   <a href="html/list.html" class="media item-link item-content" data-context-name="list"><img src="img/branch_7.jpg" alt=""></a>
+                   <div class="info"> <a href="html/list.html" class="title item-link item-content" data-context-name="list">Paul Hewitt</a> </div>
+                </div>
+                <div class="col-50 items">
+                   <a href="html/list.html" class="media item-link item-content" data-context-name="list"><img src="img/branch_8.jpg" alt=""></a>
+                   <div class="info"> <a href="html/list.html" class="title item-link item-content" data-context-name="list">Rolex</a> </div>
+                </div>
+             </div>
+          </div>
+       </div>
+    </div>
+  </div-->
+</div>

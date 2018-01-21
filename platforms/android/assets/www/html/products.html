@@ -1,0 +1,59 @@
+<div class="navbar">
+   <div class="navbar-inner">
+      <div class="left"><a href="#" class="back"><i class="fa fa-back"></i></a><a href="#" class="link menu icon-refresh"><i class="fa fa-refresh"></i></a></div>
+      <div class="center sliding"><a href="#" class="logo"><img src="img/logo.png" alt=""></a></div>
+      <div class="right"><a href="#" class="link cart item-link" data-context-name="list" ><i class="fa fa-cart"></i> <i class="cap">2</i></a>
+         <a href="#" data-popup=".popup-country" class="link globe open-popup"><i class="fa fa-world"></i></a>
+      </div>
+   </div>
+</div>
+<!-- Pages, because we need fixed-through navbar and toolbar, it has additional appropriate classes-->
+<div class="pages">
+   <div data-page="products" class="page listdata productspage" id="products">
+      <div class="page-content hide-bars-on-scroll">
+         <div class="list-block">			
+			<div class="content-block-title pricefilter">
+				<select name="sort" id="allSort"  class="commanselt" data-bind="event:{change: indexModel.sortProducts}">
+             <option value="name" selected>Name</option>
+             <option value="low">Low Price</option>
+             <option value="high">High Price</option>     
+           </select>
+			 </div>
+            <h4 class="producttitle" id="brand_name" data-bind="text: productsModel.brandinfo().brand_name">Paul Hewitt</h4>
+			
+            <div class="content-block productscontent" data-bind="foreach: indexModel.productsArray()">
+               <!-- ko if: ($index() == 0) -->
+               <div class="row largesection">
+                  <div class="col-100 items">
+                     <a href="#" class="media item-link" data-context-name="details" data-bind="event:{click: $parent.showDetails}">
+                        <img data-bind="attr: {'src': image_path}" alt="">
+                     </a>
+                     <div class="info"> 
+                        <a href="#" class="title item-link" data-context-name="details" data-bind="text: product_name, event:{click: $parent.showDetails}">Paul Hewitt watches</a> 
+                        <span class="col-40 price" data-bind="text: '$'+price">$399</span> 
+                        <span class="col-60 addtocartwrap"> 
+                           <a href="#" class="btn addtocart" data-context-name="payment" data-bind="event:{click: $parent.addCart},css: { btninactive: active }">Add to Cart</a>
+                        </span> 
+                     </div>
+                  </div>
+               </div>
+               <!-- /ko -->
+               <!-- ko if: ($index() != 0) -->
+               <div class="row">
+                  <div class="col-50 items"> 
+                     <a href="#" class="media item-link productdetails" data-context-name="details" data-bind="event:{click: $parent.showDetails}"><img data-bind="attr: {'src': image_path}" alt=""></a>
+                     <div class="info"> 
+                        <a href="#" class="title item-link productdetails" data-context-name="details" data-bind="text: product_name, event:{click: $parent.showDetails}"></a>
+                        <span class="col-40 price" data-bind="text: '$'+price"></span>
+                        <span class="col-60 addtocartwrap">
+                           <a href="#" class="btn addtocart" data-context-name="payment" data-bind="event:{click: $parent.addCart},css: { btninactive: active }">Add to Cart</a>
+                        </span>
+                     </div>
+                  </div>
+               </div>
+               <!-- /ko -->
+            </div>
+         </div>
+      </div>
+   </div>
+</div>

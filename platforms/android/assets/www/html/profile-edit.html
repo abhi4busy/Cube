@@ -1,0 +1,179 @@
+<!-- Top Navbar-->
+<div class="navbar">
+   <div class="navbar-inner">
+      <div class="left"><a href="#" class="back"><i class="fa fa-back"></i></a><a href="#" class="link menu icon-refresh"><i class="fa fa-refresh"></i></a></div>
+      <div class="center sliding"><a href="html/brands.html" class="logo"><img src="img/logo.png" alt=""></a></div>
+      <div class="right"><a href="#" class="link cart item-link item-content" data-context-name="list" ><i class="fa fa-cart"></i> <i class="cap">2</i></a>
+         <a href="#" data-popup=".popup-country" class="link globe open-popup"><i class="fa fa-world"></i></a>
+      </div>
+   </div>
+</div>
+<div class="pages">
+  <div data-page="profileedit" class="page profileedit" id="profileedit">
+    <div class="list-block page-content hide-bars-on-scroll">
+                     <div class="content-block-title">Edit Profile</div>
+                     <ul class="fromwrap">
+                        <li>
+                           <div class="item-content">
+                              <div class="item-inner">
+                                 <div class="item-input">
+                                     <select class="mrlabel">
+                                       <option>MR</option>
+                                       <option>Mrs</option>
+                                       <option>Dr</option>
+                                       <option>Prof</option>
+                                       <option>Rev</option>
+                                       <option>Others</option>
+                                    </select>
+                                 </div>
+                              </div>
+                           </div>
+                        </li>
+                        <li>
+                           <div class="item-content">
+                              <div class="item-inner">
+                                 <div class="item-input">
+                                    <input type="text" placeholder="Jitendra" class="fname" data-bind="value: editProfileModel.userdetail().fn">
+                                 </div>
+                              </div>
+                           </div>
+                        </li>
+                        <li>
+                           <div class="item-content">
+                              <div class="item-inner">
+                                 <div class="item-input">
+                                    <input type="text" placeholder="Singh" class="mname" data-bind="value: editProfileModel.userdetail().mn">
+                                 </div>
+                              </div>
+                           </div>
+                        </li>
+                        <li>
+                           <div class="item-content">
+                              <div class="item-inner">
+                                 <div class="item-input">
+                                    <input type="text" placeholder="Deora" class="lname" data-bind="value: editProfileModel.userdetail().ln">
+                                 </div>
+                              </div>
+                           </div>
+                        </li>
+                        <li>
+                           <div class="item-content">
+                              <div class="item-inner">
+                                 <div class="item-input row">
+                                    <input type="text" readonly data-bind="value: indexModel.user_details().dob">
+                                 </div>
+                              </div>
+                           </div>
+                        </li>
+                        <li>
+                           <div class="item-content">
+                              <div class="item-inner">
+                                 <div class="item-input row">
+                                    <input type="number" class="col-20 co_code" readonly data-bind="value: editProfileModel.userdetail().phcode"> 
+                                    <input type="number" class="col-70 phone" readonly data-bind="value: editProfileModel.userdetail().ph">
+                                 </div>
+                              </div>
+                           </div>
+                        </li>
+                        <li>
+                           <div class="item-content">
+                              <div class="item-inner">
+                                 <div class="item-input">
+                                    <input type="email" placeholder="deorajitendra@gmail.com" class="email" data-bind="value: indexModel.user_details().email" readonly>
+                                 </div>
+                              </div>
+                           </div>
+                        </li>
+                        <!--li>
+                           <div class="item-content">
+                              <div class="item-inner">
+                                 <div class="item-input">
+                                    <input type="password" placeholder="Change Password" class="password" data-bind="value: editProfileModel.userdetail().pass">
+                                 </div>
+                              </div>
+                           </div>
+                        </li>
+                        <li>
+                           <div class="item-content">
+                              <div class="item-inner">
+                                 <div class="item-input">
+                                    <input type="password" placeholder="Re-enter Password" class="repassword">
+                                 </div>
+                              </div>
+                           </div>
+                        </li-->
+                        <li>
+                           <div class="item-content">
+                              <div class="item-inner">
+                                 <div class="item-input country">
+                                    <select class="frm" data-bind="options: indexModel.locations().countries,
+                                                 optionsText: 'name',
+                                                 optionsValue: 'id',
+                                                 value: indexModel.user_details().country,
+                                                 optionsCaption: 'Select Country',
+                                                 event:{ change: indexModel.onCountryChange}">
+                                       <option>UAE</option>
+                                    </select>
+                                 </div>
+                              </div>
+                           </div>
+                        </li>
+                        <li>
+                           <div class="item-content">
+                              <div class="item-inner">
+                                 <div class="item-input state">
+                                    <select class="frm" data-bind="options: indexModel.locations().states,
+                                                 optionsText: 'name',
+                                                 optionsValue: 'id',
+                                                 value: indexModel.user_details().state,
+                                                 optionsCaption: 'Select State',
+                                                 event:{ change: indexModel.onStateChange}">
+                                       <option>Dubai</option>
+                                    </select>
+                                 </div>
+                              </div>
+                           </div>
+                        </li>
+                        <li>
+                           <div class="item-content">
+                              <div class="item-inner">
+                                 <div class="item-input city">
+                                    <select class="frm" data-bind="options: indexModel.locations().cities,
+                                                 optionsText: 'name',
+                                                 optionsValue: 'id',
+                                                 value: indexModel.user_details().city,
+                                                 optionsCaption: 'Select City'">
+                                       <option>Dubai</option>
+                                    </select>
+                                 </div>
+                              </div>
+                           </div>
+                        </li>
+                        <li>
+                           <div class="item-content">
+                              <div class="item-inner">
+                                 <div class="item-input">
+                                    <input type="text" placeholder="2456" class="frm zip" data-bind="value: indexModel.user_details().zip">
+                                 </div>
+                              </div>
+                           </div>
+                        </li>
+                        <li>
+                           <div class="item-content">
+                              <div class="item-inner">
+                                 <div class="item-input">
+                                    <textarea class="address" data-bind="value: editProfileModel.userdetail().addr">Dubai Deira</textarea>
+                                 </div>
+                              </div>
+                           </div>
+                        </li>
+                        <li class="btnholder">
+                           <div class="row">
+                              <div class="col-50"><a href="#" class="item-link list-button btn btnbox" data-bind="event:{click: updateProfile}">Save</a></div>
+                              <div class="col-50"><a href="#" class="item-link list-button btnred btn btnbox" data-bind="event:{click: cancelEdit}">Cancel</a></div>
+                           </div>
+                        </li>
+                     </ul>
+    </div>
+  </div>  
+</div>

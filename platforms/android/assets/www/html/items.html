@@ -1,0 +1,50 @@
+<!-- Top Navbar-->
+<div class="navbar">
+   <div class="navbar-inner">
+      <div class="left"> <a href="#" class="link menu icon-only open-panel"><i class="fa fa-menu"></i></a><a href="#" class="link menu icon-refresh"><i class="fa fa-refresh"></i></a> </div>
+      <div class="center sliding"><a href="html/brands.html" class="logo"><img src="img/logo.png" alt=""></a></div>
+      <div class="right"><a href="#" class="link cart item-link item-content" data-context-name="list" ><i class="fa fa-cart"></i> <i class="cap">2</i></a>
+         <a href="#" data-popup=".popup-country" class="link globe open-popup"><i class="fa fa-world"></i></a>
+      </div>
+   </div>
+</div>
+<div class="pages">
+  <div class="page listdata productspage" data-page="items" id="items">
+    <div class="page-content infinite-scroll">
+    	<div class="content-block-title homelogo">
+			<div class="customtabs"> 
+			<a class="item-link item-content" data-bind="event:{click: indexModel.reloadBrands}">Brands</a>
+			<a class="item-link item-content active" data-bind="event:{click: indexModel.itemClickHandler}">Items</a>
+			</div>
+		</div>       
+       <div class="list-block">
+        <div class="content-block-title pricefilter">
+        <select name="sort" id="allSort" class="commanselt" data-bind="event:{change: indexModel.sortProducts}">
+          <option value="" selected>Latest</option>
+          <option value="name">Name</option>
+          <option value="low">Low Price</option>
+          <option value="high">High Price</option>     
+        </select>
+       </div>
+          <div class="content-block" data-bind="foreach: indexModel.productsArray()">               
+               <div class="row">
+                  <div class="col-50 items"> 
+                     <a href="#" class="media item-link productdetails" data-context-name="details" data-bind="event:{click: productsModel.showDetails}"><img data-bind="attr: {'src': image_path}" alt=""></a>
+                     <div class="info"> 
+                        <a href="#" class="title item-link productdetails" data-context-name="details" data-bind="text: product_name, event:{click: productsModel.showDetails}"></a>
+                        <span class="col-40 price" data-bind="text: '$'+price"></span>
+                        <span class="col-60 addtocartwrap">
+                           <a href="#" class="btn addtocart" data-context-name="payment" data-bind="event:{click: allItemsModel.addCart},css: { btninactive: active }">Add to Cart</a>
+                        </span>
+                     </div>
+                  </div>
+               </div>
+            </div>
+       </div>
+       <!-- Preloader -->
+      <!--div class="infinite-scroll-preloader">
+        <div class="preloader"></div>
+      </div-->
+    </div>
+  </div>
+</div>

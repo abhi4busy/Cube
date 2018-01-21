@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html>
+   <head>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
+      <meta name="apple-mobile-web-app-capable" content="yes">
+      <meta name="apple-mobile-web-app-status-bar-style" content="black">
+      <title>CUBE</title>
+      <!-- Path to Framework7 Library CSS-->
+      <link rel="stylesheet" href="css/framework7.ios.css">
+      <!-- Path to your custom app styles-->
+      <link rel="stylesheet" href="css/app.css">
+   </head>
+   <body>
+      <!-- Status bar overlay for fullscreen mode-->
+      <div class="statusbar-overlay"></div>
+      <!-- Panels overlay-->
+      <div class="panel-overlay"></div>
+      <!-- Left panel with reveal effect-->
+      <div class="panel panel-left panel-reveal">
+         <h2 class="menutitle">Menu</h2>
+         <div class="content-block">
+         	<p class="profilepic"><img src="img/profile_pic.png" alt="" data-bind="attr:{'src': indexModel.profilepic}, event: {click: indexModel.uploadPic}"></p>
+            <ul>
+               <li class="gifts"><a href="#" class="item-link close-panel" data-bind="event:{ click: myCube}"><i class="fa fa_cube" aria-hidden="true"></i> My Cube</a></li>
+               <li class="sendgift"><a href="#" class="item-link close-panel" data-bind="event:{ click: sendGift}"><i class="fa fa_gift" aria-hidden="true"></i> Cube A Friend</a></li>
+               <li class="invite"><a href="#" class="item-link close-panel" data-bind="event:{ click: sendInvite}"><i class="fa fa_user_plus" aria-hidden="true"></i> Invite Friends</a></li>               
+               <li class="edit"><a href="#" class="item-link close-panel edit" data-bind="event:{ click: editProfile}"><i class="fa fa_edit" aria-hidden="true"></i> Edit profile</a></li>
+               <li class="history"><a href="#" class="item-link close-panel logout" data-bind="event:{ click: doLogout}"><i class="fa fa_logout" aria-hidden="true"></i> Logout</a></li>
+               <!--li class="history"><a href="html/gift_box.html" class="item-link close-panel" data-context-name="giftboxs">History</a></li>
+               <li class="setting"><a href="html/register.html"  class="item-link close-panel" data-context-name="register">Registor</a></li>
+               <li class="cart"><a href="html/cart.html"  class="item-link close-panel" data-context-name="cart" >Cart</a></li-->
+            </ul>
+         </div>
+      </div>
+      <!-- Views-->
+      <div class="views">
+         <!-- Your main view, should have "view-main" class-->
+         <div class="view view-main">
+            <!-- Top Navbar-->
+            <div class="navbar" style="display:none">
+               <div class="navbar-inner">
+                  <div class="left"> <a href="#" class="link menu icon-only open-panel"><i class="fa fa-menu"></i></a><a href="#" class="link menu icon-refresh"><i class="fa fa-refresh"></i></a> </div>
+                  <div class="center sliding"><a href="#" class="logo"><img src="img/logo.png" alt=""></a></div>
+                  <div class="right"><a href="#" class="link cart item-link item-content"><i class="fa fa-cart"></i> <i class="cap">2</i></a>
+                     <a href="#" class="link globe"><i class="fa fa-world"></i></a>
+                  </div>
+               </div>
+            </div>
+            <!-- Pages, because we need fixed-through navbar and toolbar, it has additional appropriate classes-->    
+            <div class="pages navbar-through griddata" >
+               <div data-page="index" class="page no-navbar" id="index">                  
+                  <div class="center homepage"></div>
+               </div>
+            </div>
+         </div>
+      </div>
+      <!-- POP up country-->
+      <div class="popup popup-country">
+         <div class="content-block">
+            <div class="content-block-title">Select City</div>
+            <a href="#" class="close-popup fa fa-close"></a>
+            <form class="countrybar">
+               <div class="from_item country">
+                  <select class="frm" data-bind="options: indexModel.locations().countries,
+                                                 optionsText: 'name',
+                                                 optionsValue: 'id',
+                                                 value: indexModel.user_details().country,
+                                                 optionsCaption: 'Select Country',
+                                                 event:{ change: indexModel.onCountryChange}">
+                     <option>Select Country</option>
+                  </select>
+               </div>
+               <div class="from_item state">
+                  <select class="frm" data-bind="options: indexModel.locations().states,
+                                                 optionsText: 'name',
+                                                 optionsValue: 'id',
+                                                 value: indexModel.user_details().state,
+                                                 optionsCaption: 'Select State',
+                                                 event:{ change: indexModel.onStateChange}">
+                     <option>Select State</option>
+                  </select>
+               </div>
+               <div class="from_item city">
+                  <select class="frm" data-bind="options: indexModel.locations().cities,
+                                                 optionsText: 'name',
+                                                 optionsValue: 'id',
+                                                 value: indexModel.user_details().city,
+                                                 optionsCaption: 'Select City',
+                                                 event:{ change: indexModel.onCityChange}">
+                     <option>Select City</option>
+                  </select>
+               </div>
+               <!--div class="from_item store">
+                  <select class="frm" data-bind="options: indexModel.locations().stores,
+                                                 optionsText: 'name',
+                                                 optionsValue: 'id',
+                                                 value: indexModel.user_details().store,
+                                                 optionsCaption: 'Select Store',
+                                                 event:{ change: indexModel.onStoreChange}">
+                     <option>Select Store</option>                     
+                  </select>
+               </div-->
+               <div class="from_item store">
+                  <p class="buttons-row">
+                     <a href="#" class="button btn close-popup">Confirm</a>
+                     <a href="#" class="button btn btnred close-popup">Cancel</a>
+                  </p>
+               </div>
+            </form>
+         </div>
+      </div>
+      <!-- payment Conformation Popup -->
+      <div class="popup popup-payment" id="popup-payment">
+         <div class="content-block">
+            <div class="content-block-title">Payment Conformation Details</div>
+            <a href="#" class="close-popup fa fa-close"></a>
+            <div class="confirmscreen">
+               <h3 data-bind="text: indexModel.getbrands()">Paul Hewitt watches</h3>
+               <ul>
+                  <li class="item-content">
+                     <div class="itemtitle">Products</div>
+                     <div class="itemafter" data-bind="text: indexModel.getProds()">Hewitt</div>
+                  </li>
+                  <li class="item-content">
+                     <div class="itemtitle">Location</div>
+                     <div class="itemafter" data-bind="text: indexModel.getLocation()">Dubai Mall Shop Number 5, Dubai UAE</div>
+                  </li>
+                  <li class="item-content">
+                     <div class="itemtitle">Total</div>
+                     <div class="itemafter" data-bind="text: '$'+indexModel.getTotalCost()">$ 399</div>
+                  </li>
+               </ul>
+               <div class="notes"><strong> Notes:</strong>Order will be delvered to above mentioned store. You are requested to collect it once notified.</div>
+               <p class="buttons-row">
+                  <a href="#" class="button btn item-link" data-context-name="gift-comformation" data-bind="event: {click: confirmPay}">Confirm</a>
+                  <a href="#" class="button btn btnred close-popup">Cancel</a>
+               </p>
+            </div>
+         </div>
+      </div>
+      <!-- Login form -->
+      <div class="login-screen">
+         <div class="view">
+            <div class="page register">
+               <div class="page-content login-screen-content">
+                  <!--a href="#" class="close-login-screen fa fa-close"></a-->
+                  <div class="login-screen-title"><img src="img/logo.png" alt=""> </div>
+                  <form>
+                     <div class="list-block">
+                        <ul class="fromwrap">
+                           <li class="item-content">
+                              <div class="item-inner">
+                                 <div class="item-input">
+                                    <input type="text" name="username" placeholder="Email ID">
+                                 </div>
+                              </div>
+                           </li>
+                           <li class="item-content">
+                              <div class="item-inner">
+                                 <div class="item-input">
+                                    <input type="password" name="password" placeholder="Password">
+                                 </div>
+                              </div>
+                           </li>
+                        </ul>
+                     </div>
+                     <div class="list-block">
+                        <ul class="signbtns">
+                           <li>
+                              <a href="#"  data-popup=".popup-forgot" class="open-popup">Forgot your password?</a>
+                           </li>
+                           <li>
+                              <a id="login" href="#" class="item-link list-button btn btnbox" data-bind="event: {click: indexModel.loginClick}">Sign In</a>
+                           </li>
+                        </ul>
+                        <div class="list-block-labe"> </div>
+                     </div>
+                  </form>
+               </div>
+            </div>
+         </div>
+      </div>
+      <!-- Forgot form -->
+      <div class="popup popup-forgot">
+         <div class="content-block">
+            <a href="#" class="close-popup fa fa-close"></a>
+            <form>
+               <div class="list-block register">
+                  <ul class="fromwrap">
+                     <li class="item-content">
+                        <div class="item-inner">
+                           <div class="item-input">
+                              <input type="text" name="username" placeholder="Email ID">
+                           </div>
+                        </div>
+                     </li>
+                     <li>
+                        <a href="#" class="item-link list-button btn btnbox">Submit</a>
+                     </li>
+                  </ul>
+               </div>
+            </form>
+         </div>
+      </div>
+      <!-- Friends List --> 
+      <div class="popup popup-friends">
+         <div class="content-block">
+            <a href="#" class="close-popup fa fa-close"></a>
+            <div class="list-block">
+               <div class="content-block-title">Cubies</div>
+               <div class="content-block">
+                  <ul class="friendslist" data-bind="foreach: indexModel.cubies">
+                     <li class="swipeout">
+                        <div class="swipeout-content">
+                           <div class="item-inner"> 
+                              <span data-bind="text: name +' : '+mobile"></span>
+                              <div class="col-20"><i class="fa fa-long-arrow-left"></i> <i class="fa fa-hand-o-up"></i></div>
+                           </div>
+                        </div>
+                        <div class="swipeout-actions-right">
+                           <a href="#" class="action1 btngreen" data-bind="event:{click: $parent.selectFriend}">Select</a>
+                           <a href="#" class="action2">Cancel</a>
+                        </div>
+                     </li>                     
+                  </ul>
+               </div>
+            </div>
+         </div>
+      </div>
+      
+      <!-- Upload Picture-->
+      <div class="popup popup-uploadpicture">
+         <div class="content-block">
+            <div class="content-block-title">Profile Picture</div>
+            <a href="#" class="fa fa-close" data-bind="event: {click: indexModel.showHomePage}"></a>
+            <div>
+               <form class="upload">
+                    <div class="uploadpic">
+                        <a class="button file-button" data-bind="event: {click: indexModel.openFile}"><span class="file">Choose File</span><span class="btnlbl">no file selected...</span></a>
+                    </div>
+                    <!--div data-bind="foreach: indexModel.categories">
+                    	   <span><a href="#" class="tages" data-bind="text: $data, event:{click: $parent.filterProds}">Watches</a></span>
+                    </div-->
+                    <p data-bind="visible: indexModel.categories">Choose favourite categories</p>
+                     <div class="list-block fav" data-bind="visible: indexModel.categories">
+                       <ul data-bind="foreach: indexModel.categories">
+                         <!-- Single chekbox item -->
+                         <li>
+                           <label class="label-checkbox item-content">
+                             <!-- Checked by default -->
+                             <input id="favbox" type="checkbox" name="my-checkbox" data-bind="checked: $parent.favSelected, attr:{'value': catagory_id}">
+                             <div class="item-media">
+                               <i class="icon icon-form-checkbox"></i>
+                             </div>
+                             <div class="item-inner">
+                               <div class="item-title" data-bind="text: catagory_name">Books</div>
+                             </div>
+                           </label>
+                         </li>
+                       </ul>
+                     </div> 
+               </form>
+               <p class="buttons-row">
+                  <a href="#" class="button btn item-link" data-context-name="gift-comformation" data-bind="event: {click: indexModel.uploadPhoto}">Confirm</a>
+                  <a href="#" class="button btn btnred" data-bind="event: {click: indexModel.showHomePage}">Cancel</a>
+               </p>
+            </div>
+         </div>
+      </div>
+      
+      <!-- Path to Framework7 Library JS--> 
+      <script src="cordova.js"></script>
+      <script src="js/lib/jquery.min.js"></script>
+      <script src="js/lib/jquery-ui.min.js"></script>
+      <script src="js/lib/jquery.ui.touch-punch.min.js"></script>
+      <script type="text/javascript" src="js/lib/framework7.min.js"></script> 
+      <script type="text/javascript" src="js/lib/knockout-latest.js"></script> 
+
+      <script type="text/javascript" src="js/common/constants.js"></script>
+      <script type="text/javascript" src="js/common/utils.js"></script>
+      <script type="text/javascript" src="js/common/serviceFacade.js"></script>
+
+      <script type="text/javascript" src="js/index.js"></script>
+      <script type="text/javascript" src="js/models/registerModel.js"></script>
+      <script type="text/javascript" src="js/models/brandsModel.js"></script>
+      <script type="text/javascript" src="js/models/productsModel.js"></script>
+      <script type="text/javascript" src="js/models/allItemsModel.js"></script>
+      <script type="text/javascript" src="js/models/prodDetailsModel.js"></script>
+      <script type="text/javascript" src="js/models/paymentModel.js"></script>
+      <script type="text/javascript" src="js/models/confirmationModel.js"></script>
+      <script type="text/javascript" src="js/models/contactsModel.js"></script>
+      <script type="text/javascript" src="js/models/myCubeModel.js"></script>
+      <script type="text/javascript" src="js/models/viewMoreModel.js"></script>
+      <script type="text/javascript" src="js/models/sendGiftModel.js"></script>
+      <script type="text/javascript" src="js/models/cartModel.js"></script>
+      <script type="text/javascript" src="js/models/editProfileModel.js"></script>
+   </body>
+</html>

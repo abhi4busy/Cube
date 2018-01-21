@@ -1,0 +1,62 @@
+<div class="navbar">
+  <div class="navbar-inner">
+    <div class="left"><a href="#" class="back"><i class="fa fa-back"></i></a><a href="#" class="link menu icon-refresh"><i class="fa fa-refresh"></i></a></div>
+    <div class="center sliding"><a href="#" class="logo"><img src="img/logo.png" alt=""></a></div>
+    <div class="right"><a href="#" class="link cart item-link " data-context-name="list" ><i class="fa fa-cart"></i> <i class="cap">2</i></a>
+         <a href="#" data-popup=".popup-country" class="link globe open-popup"><i class="fa fa-world"></i></a></div>
+  </div>
+</div>
+
+<!-- Pages, because we need fixed-through navbar and toolbar, it has additional appropriate classes-->
+
+<div class="pages">
+ <div data-page="payment" class="page register payment" id="payment">  
+    <div class="list-block page-content hide-bars-on-scroll">
+	
+      <div class="content-block-title">Payment</div>
+	  
+      <ul class="fromwrap">
+        <li>
+          <div>
+            <div class="item-inner">
+              <div class="item-input">
+                <input type="number" placeholder="Card Number" class="cardnumber" maxlength="16" data-bind="value: paymentModel.cardinfo().cardno, valueUpdate: 'input'">
+              </div>
+            </div>
+          </div>
+        </li>
+        
+       <li>
+          <div>
+            <div class="item-inner">
+              <div class="item-input row">
+                <input type="number" placeholder="CCV" class="col-20 ccv" maxlength="3" data-bind="value: paymentModel.cardinfo().ccv, valueUpdate: 'input'">
+                <input type="text" placeholder="EXP Date" readonly class="col-70 expdate" id="datepicker" data-bind="value: paymentModel.cardinfo().expdate">
+              </div>
+            </div>
+          </div>
+        </li>
+        
+        <li>
+          <div>
+            <div class="item-inner">
+              <div class="item-input">
+                <input type="text" placeholder="Name" class="name" maxlength="50" data-bind="value: paymentModel.cardinfo().name, valueUpdate: 'input'">
+              </div>
+            </div>
+          </div>
+        </li>        
+        
+        <li class="btnholder">
+         <a href="#" class="item-link list-button btn btnbox" data-bind="text: 'Pay $'+indexModel.purchasedProds().totalPay, event:{click: paymentModel.payNow}">$ 399 PAY</a>
+        </li>
+		
+      </ul>
+	  
+</div>
+  </div>
+</div>
+
+
+
+ 
